@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeflex/primeflex.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
+
+
+ body{
+ min-height: 100% !important;
+}
+
+
+.p-card .p-card-body {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+

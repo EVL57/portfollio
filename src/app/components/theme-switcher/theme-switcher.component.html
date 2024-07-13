@@ -1,0 +1,23 @@
+<div class="flex-1 flex align-content-end justify-content-end pr-8">
+    <p-dropdown [options]="themes"
+    (onChange)="changeTheme($event.value)"
+    [(ngModel)]="selectedTheme"
+    placeholder="name"
+    id="themeDropdown"
+    class="z-5"
+    >
+    <ng-template let-theme pTemplate="ttt">
+        @if (selectedTheme) {
+            <div class="flex align-items-center gap-2">
+                <div>{{theme}}</div>
+            </div>
+        }
+    </ng-template>
+
+    <ng-template let-theme pTemplate="theme">
+            <div class="flex align-items-center gap-2">
+                <div>{{theme}}</div>
+            </div>
+    </ng-template>
+    </p-dropdown>
+</div>

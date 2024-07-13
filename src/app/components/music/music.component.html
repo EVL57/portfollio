@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+<p-carousel 
+[value]="topTenArtists" 
+[numVisible]="5" 
+[numScroll]="5" 
+[responsiveOptions]="responsiveOptions">
+<ng-template pTemplate="header">
+    <p>Top Artists</p>
+</ng-template>
+    <ng-template let-item pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 p-3">
+            <div class="mb-3 font-medium">
+                <div class="flex justify-content-center align-content-center">
+                <img alt="ArtistPhoto" src="{{item.artist.image}}" style="height: 65px;">
+            </div>
+            </div>
+            <div style="font-weight: bold; font-size: medium; text-wrap: wrap; text-align: center; align-content: center;">
+                {{item.artist.name}}
+        </div>
+        <p-divider />
+        <div style="font-size: medium;">
+            Streams: {{item.streams}}
+        </div>
+        <br>
+        <div style="text-wrap: nowrap; font-size: medium;">
+            Followers: {{item.artist.followers}}
+        </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+
+<p-carousel 
+[value]="topTenTracks" 
+[numVisible]="5" 
+[numScroll]="5" 
+[responsiveOptions]="responsiveOptions">
+<ng-template pTemplate="header">
+    <p style="padding-top: 0.5rem;">Top Tracks</p>
+</ng-template>
+    <ng-template let-item pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 p-3">
+            <div class="mb-2 font-medium">
+                <div class="flex justify-content-center align-content-center">
+                <img alt="ArtistPhoto" src="{{item.track.albums[0].image}}" style="height: 65px;">
+            </div>
+            </div>
+            <div style="font-weight: bold; font-size: medium; text-wrap: wrap; text-align: center; align-content: center;">
+                {{item.track.name}}
+        </div>
+        <p-divider />
+        <div style="font-size: medium;">
+            Streams: {{item.streams}}
+        </div>
+        <br>
+        <div style="text-wrap: nowrap; font-size: medium;">
+            Minutes Played: {{item.track.durationMs}}
+        </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+<p-carousel 
+[value]="topTenAlbums" 
+[numVisible]="5" 
+[numScroll]="5" 
+[responsiveOptions]="responsiveOptions">
+<ng-template pTemplate="header">
+    <p>Top Albums</p>
+</ng-template>
+    <ng-template let-item pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 p-3">
+            <div class="mb-3 font-medium">
+                <div class="flex justify-content-center align-content-center">
+                <img alt="ArtistPhoto" src="{{item.album.image}}" style="height: 65px;">
+            </div>
+            </div>
+            <div style="font-weight: bold; font-size: medium; text-wrap: balance; text-align: center; align-content: center; height: 30px;">
+                {{item.album.name}}
+        </div>
+        <p-divider />
+        <div style="font-size: medium;">
+            {{item.album.artists[0].name}}
+        </div>
+        <br>
+        <div style="text-wrap: nowrap; font-size: medium;">
+            Streams: {{item.streams}}
+        </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+
+
+
+
+
+
+
+
+
